@@ -1,4 +1,4 @@
-<img width="523" height="59" alt="image" src="https://github.com/user-attachments/assets/8617d7c7-deea-4e9c-8b7e-e2f646104785" /># Sistem Monitoring & Ranking Akademik Mahasiswa
+Sistem Monitoring & Ranking Akademik Mahasiswa
 
 Program sederhana berbasis Python untuk menentukan status aktif mahasiswa dan saya menambahakan ranking berdasarkan tingkat kedisiplinan (kehadiran dan penyelesaian tugas) menggunakan konsep **Decision Tree (IF-ELSE)**.
 
