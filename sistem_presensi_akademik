@@ -1,0 +1,70 @@
+# ==========================================
+# PROGRAM MONITORING & RANKING AKADEMIK
+# ==========================================
+
+# Data Mahasiswa
+data_mahasiswa = [
+    {"nama": "Andi", "kehadiran": "Tinggi", "tugas": "Lengkap"},
+    {"nama": "Budi", "kehadiran": "Rendah", "tugas": "Tidak Lengkap"},
+    {"nama": "Citra", "kehadiran": "Tinggi", "tugas": "Tidak Lengkap"},
+    {"nama": "Deni", "kehadiran": "Rendah", "tugas": "Lengkap"},
+    {"nama": "Eka", "kehadiran": "Tinggi", "tugas": "Lengkap"}
+]
+
+# List untuk menampung mahasiswa terrajin (Ranking)
+mahasiswa_terrajin = []
+
+jumlah_aktif = 0
+jumlah_tidak_aktif = 0
+
+print("="*50)
+print(f"{'SISTEM INFORMASI AKADEMIK MAHASISWA':^50}")
+print("="*50)
+
+# Proses penentuan status dan logika Decision Tree
+for mhs in data_mahasiswa:
+    nama = mhs["nama"]
+    hadir = mhs["kehadiran"]
+    tugas = mhs["tugas"]
+    
+    # 1. Penentuan Status (Berdasarkan Kehadiran)
+    if hadir == "Tinggi":
+        status = "Aktif"
+        jumlah_aktif += 1
+    else:
+        status = "Tidak Aktif"
+        jumlah_tidak_aktif += 1
+        
+    # 2. Penentuan Keterangan & Fitur Ranking
+    keterangan = "-"
+    if hadir == "Tinggi" and tugas == "Lengkap":
+        keterangan = "Mahasiswa Disiplin"
+        mahasiswa_terrajin.append(nama)
+    
+    # Menampilkan Data per Mahasiswa
+    print(f"Nama       : {nama}")
+    print(f"Kehadiran  : {hadir}")
+    print(f"Tugas      : {tugas}")
+    print(f"Status     : {status}")
+    print(f"Keterangan : {keterangan}")
+    print("-" * 50)
+
+# FITUR TAMBAHAN: RANKING MAHASISWA TERRAJIN (Tanpa Emoji)
+print("\n" + "*"*50)
+print(f"{'--- DAFTAR MAHASISWA TERRAJIN ---':^50}")
+print("*"*50)
+if mahasiswa_terrajin:
+    for i, nama_mhs in enumerate(mahasiswa_terrajin, 1):
+        print(f" Ranking {i} : {nama_mhs} (Sangat Disiplin)")
+else:
+    print(" Belum ada mahasiswa yang memenuhi kriteria.")
+print("*"*50)
+
+# REKAPITULASI DATA
+print("\n" + "="*50)
+print(f"{'REKAP DATA KESELURUHAN':^50}")
+print("="*50)
+print(f" Jumlah Mahasiswa Aktif       : {jumlah_aktif}")
+print(f" Jumlah Mahasiswa Tidak Aktif : {jumlah_tidak_aktif}")
+print(f" Total Mahasiswa              : {len(data_mahasiswa)}")
+print("="*50)
